@@ -13,9 +13,10 @@ type: text/vnd.tiddlywiki
 
 <$list filter=<<py-is-todo>>>
   <span class="py-toggle-todo-button">
-    <$checkbox tag="done" actions=<<save-actions>>>
-      {{||$:/plugins/nico/projectify/ui/buttons/Checkbox}}
-    </$checkbox>
+     <$checkbox tag="done" field="done-timestamp"
+                checked=<<now "[UTC]YYYY0MM0DD0hh0mm0ss0XXX">> actions=<<save-actions>>>
+       {{||$:/plugins/nico/projectify/ui/buttons/Checkbox}}
+     </$checkbox>
   </span>
 </$list>
 
